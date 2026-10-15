@@ -22,3 +22,22 @@ void Book::setAuthor(const string& author) { this->author = author;}
 void Book::setISBN(const string& isbn) {this->isbn = isbn;}
 void Book::setAvailability(bool available) {this -> isAvailable = available;}
 void Book::setBorrowerId(const string& id){this ->borrowerId = id;}
+
+// Methode
+
+// Methode pour prendre un livre, rendre le livre non disponible et mettre id
+void Book::checkOut(const string& borrowerId){
+    setAvailability(false);
+    setBorrowerId(borrowerId);
+}
+
+// Methode pour retourner un livre, le mettre libre et enelver borrowerId
+void Book::returnBook(){
+    setAvailability(true);
+    setBorrowerId("");
+
+}
+
+string Book::toString() const {
+    //string result = "Titre : " + title + "\n Autheur : " + author + "\n ISBN : " + isbn; 
+}
