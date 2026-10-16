@@ -38,6 +38,18 @@ void Book::returnBook(){
 
 }
 
+// Methode pour retourner un String pour la description d'un livre
 string Book::toString() const {
-    //string result = "Titre : " + title + "\n Autheur : " + author + "\n ISBN : " + isbn; 
+    string result = "Titre : " + title + "\n Autheur : " + author + "\n ISBN : " + isbn; 
+
+    return result;
+}
+
+// Methode pour donner un format pour une sauvegarde
+string Book::toFileFormat() const {
+   string livreDispo = isAvailable ? "1"  : "0";
+
+   string result = title + "|" + author + "|" + isbn + "|" + livreDispo + "|" + borrowerId + "|";
+
+   return result;
 }
