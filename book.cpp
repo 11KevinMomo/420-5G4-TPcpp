@@ -1,4 +1,5 @@
 #include "book.h"
+#include <sstream>
 
 using namespace std;
 
@@ -49,7 +50,25 @@ string Book::toString() const {
 string Book::toFileFormat() const {
    string livreDispo = isAvailable ? "1"  : "0";
 
-   string result = title + "|" + author + "|" + isbn + "|" + livreDispo + "|" + borrowerId + "|";
+   string result = title + "|" + author + "|" + isbn + "|" + livreDispo + "|" + borrowerId;
 
    return result;
+}
+
+// Methode pour separer le contenu du fichier pour les atributs des livres
+void Book::fromFileFormat(const string& line){
+    stringstream ss(line);
+    string livreDispo;
+
+    getline(ss, title, '|');
+    getline(ss, author, '|');
+    getline(ss, isbn, '|');
+
+    //livreDispo au lieu de isAvailable parce qu'en haut jai utilise livreDispo en str pour savoir si ca ete emprunte
+    getline(ss, livreDispo, '|');
+
+    getline(ss, borrowerId);
+
+    //Convertir le texte livreDispo pour l'attribuer a isAvailable
+    isAvailable = (livreDispo == "1");
 }
