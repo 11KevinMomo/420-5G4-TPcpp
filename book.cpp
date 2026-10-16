@@ -40,9 +40,14 @@ void Book::returnBook(){
 }
 
 // Methode pour retourner un String pour la description d'un livre
-string Book::toString() const {
-    string result = "Titre : " + title + "\n Autheur : " + author + "\n ISBN : " + isbn + "\n BorrowerId : " + borrowerId; 
-
+string Book::toString() const { 
+    string result = "";
+    if (isAvailable ) {
+        result = "Titre : " + title + "\n Autheur : " + author + "\n ISBN : " + isbn + "\n Status : Disponible"; 
+    }
+    else{
+        result = "Titre : " + title + "\n Autheur : " + author + "\n ISBN : " + isbn; 
+    }
     return result;
 }
 
