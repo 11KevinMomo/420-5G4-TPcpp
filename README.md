@@ -16,7 +16,7 @@ $ make
 Il contient 2 fichiers `books.txt`et `users.txt` que vous pouvez utilisez pour tester votre code.
 Pour ca il suffit de donner chemin vers le repertoire data avec l'application `bibliotheque -d <chemin verrs data>`
 
-# Nom et prénom.
+# Nom et prénom
 Tang Quoc Khang
 
 # Les fonctionnalités que vous avez choisi d’implémenter.
@@ -24,7 +24,7 @@ Tang Quoc Khang
 
 - Tri des résultats par titre, auteur pour l’affichage (utilisation de la fonction de tri de la STL).
 
-- Créez un fichier de journal de l’application. Ce fichier est conservé au fur et à mesure des sessions (créez le fichier s’il n’existe pas à la première exécution).
+- Si on lance sans –data-dir, saveLibraryData essaie d’écrire dans "" et échoue silencieusement.
 
 # Les réponses aux questions, un paragraphe par questions est suffisant. (une phrase est insuffisant.)
 
@@ -32,7 +32,7 @@ Question 1 : C++
 
 Expliquez en détails une fonctionnalité / notion dans le code que ne nous avons pas ou peu vu en cours. Montrez ici l’exemple sorti du code du projet.
 
-Reponse 1 : 
+Reponse 1 : <sstream>
 
 
 
